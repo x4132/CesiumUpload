@@ -1,0 +1,25 @@
+{
+  "name": "upload",
+  "version": "1.0.0",
+  "description": "Cesium Uploader",
+  "author": "Alexander Shen",
+  "main": "main.js",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.703.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"  
+  },
+  "devDependencies": {
+    "electron-builder": "^22.7.0",
+    "electron": "^9.0.5"
+  },
+  "build": {
+    "appId": "com.alexshen.cesiumUploader"
+  }
+}

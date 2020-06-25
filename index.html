@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="w-100 h-100">
+
+<head>
+    <title>Upload</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <style>
+        #view2, #view3 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="w-100 h-100">
+    <div id="view1" class="w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+            <div class="d-flex">
+                <div>
+                    <input type="text" class="form-control" placeholder="Write Access Token" id="uploadKey" />
+                </div>
+                <div class="ml-2" >
+                    <button class="btn btn-primary" id="login">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="view2">
+        <div class="d-flex flex-column">
+            <div class="mt-3 text-center">
+                <input type="file" id="file" placeholder="Upload File"
+                    accept=".zip,.gltf,.gltb,.fbx,.citygml,.xml,.gml,.czml,.json,.geojson,.topojson,.kml,.kmz,.las,.laz,.dae,.obj,.flt,.asc,.src,.tiff,.tif,.img,.dem,.jpg,.jpeg,.png,.terraindb" />
+            </div>
+            <div class="mt-3 text-center" >
+                Leave position data blank if not using
+            </div>
+            <div class="mt-3 text-center">
+                <input type="number" id="lat" placeholder="Latitude" class="form-control text-center" />
+            </div>
+            <div class="mt-3 text-center">
+                <input type="number" id="ldt" placeholder="Longditude" class="form-control text-center" />
+            </div>
+            <div class="mt-3 text-center">
+                <input type="number" id="height" placeholder="Height" class="form-control text-center" />
+            </div>
+            <div class="mt-3 text-center">
+                <input type="text" id="name" placeholder="Name" class="form-control text-center" />
+            </div>
+            <div class="mt-3 text-center">
+                <select id="fileType">
+                    <option value="RASTER_IMAGERY">RASTER_IMAGERY</option>
+                    <option value="RASTER_TERRAIN">RASTER_TERRAIN</option>
+                    <option value="TERRAIN_DATABASE">TERRAIN_DATABASE</option>
+                    <option value="CITYGML">CITYGML</option>
+                    <option value="KML">KML</option>
+                    <option value="3D_CAPTURE">3D_CAPTURE</option>
+                    <option value="3D_MODEL" selected>3D_MODEL</option>
+                    <option value="POINT_CLOUD">POINT_CLOUD</option>
+                    <option value="3DTILES">3DTILES</option>
+                    <option value="CZML">CZML</option>
+                    <option value="GEOJSON">GEOJSON</option>
+                </select>
+            </div>
+            <div class="mt-3 text-center">
+                <select id="type">
+                    <option value="3DTILES" selected>3DTILES</option>
+                    <option value="IMAGERY">IMAGERY</option>
+                    <option value="TERRAIN">TERRAIN</option>
+                </select>
+            </div>
+            <div class="mt-3 text-center">
+                <button class="btn btn-primary" id="uploadButton" >Upload</button>
+            </div>
+        </div>
+    </div>
+    <div id="view3" class="w-100 h-100" >
+        <div class="w-100 h-100 d-flex flex-column justify-content-center align-items-center" >
+            <div id="uploadStatus" >
+                Preparing Upload...
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
