@@ -27,7 +27,7 @@
         $("#view3").style.display = "block";
         $("#uploadStatus").textContent = "Preparing Upload...";
 
-        const pos = $("#lat").value !== "" && $("#ldt").value !== "" && $("#height").value !== "" ? [Number($("#lat").value), Number($("#ldt").value), Number($("#height").value)] : undefined;
+        const pos = $("#lat").value !== "" && $("#ldt").value !== "" && $("#height").value !== "" ? [Number($("#ldt").value), Number($("#lat").value), Number($("#height").value)] : undefined;
 
         const postBody = {
             name: $("#name").value,
