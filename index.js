@@ -6,7 +6,9 @@
     const fs = require("fs");
 
     var uploadKey = "";
+    var UTMRelative = false;
 
+    //Event Listener
     //login event listener
     $("#login").addEventListener("click", () => {
         uploadKey = $("#uploadKey").value;
@@ -27,7 +29,7 @@
         $("#view3").style.display = "block";
         $("#uploadStatus").textContent = "Preparing Upload...";
 
-        const pos = $("#lat").value !== "" && $("#ldt").value !== "" && $("#height").value !== "" ? [Number($("#ldt").value), Number($("#lat").value), Number($("#height").value)] : undefined;
+        const pos = $("#lat").value !== "" && $("#ldt").value !== "" && $("#height").value !== "" ? calc() : undefined;
 
         const postBody = {
             name: $("#name").value,
@@ -133,5 +135,13 @@
         }
 
         waitUntilReady();
+    }
+
+    function calc() {
+        var arr = [Number($("#ldt").value), Number($("#lat").value), Number($("#height").value)];
+        var zone = 0;
+        if (UTMRelative) {
+            zone = Math.ceil((arr[0] + 180) / 6);
+        } else return arr;
     }
 })();
