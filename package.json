@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "electron-builder": "^22.7.0",
-    "electron": "^13.6.6"
+    "electron": "^15.5.5"
   },
   "build": {
     "appId": "com.alexshen.cesiumUploader"
